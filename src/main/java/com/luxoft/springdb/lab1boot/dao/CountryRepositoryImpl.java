@@ -14,7 +14,7 @@ import java.util.List;
 import static java.util.Objects.requireNonNull;
 
 @Repository
-public class CountryRepositoryImpl implements CountryRepository {
+public class CountryRepositoryImpl /*implements CountryRepository*/ {
     private final JdbcTemplate template;
     private final NamedParameterJdbcTemplate namedTemplate;
 
@@ -25,6 +25,7 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
 
+/*
     @Override
     public List<Country> getCountryList() {
         return template.query("select * from country", this::mapRow);
@@ -61,4 +62,5 @@ public class CountryRepositoryImpl implements CountryRepository {
         return template.queryForObject(
                 "select * from country where name = ?", this::mapRow, name);
     }
+*/
 }
